@@ -1,0 +1,2 @@
+import { formatDate } from "../utils/date";
+export default function DateChecks({ dates, selected, onToggle }) { return <div style={{display:"flex",gap:8,flexWrap:"wrap"}}>{(dates||[]).map((datum)=><label key={datum} style={{display:"flex",gap:6,alignItems:"center",background:selected.includes(datum)?"rgba(255,77,77,0.22)":"rgba(255,255,255,0.08)",padding:"8px 10px",borderRadius:10,cursor:"pointer"}}><input type="checkbox" checked={selected.includes(datum)} onChange={()=>onToggle(datum)} style={{width:"auto"}} />{formatDate(datum)}</label>)}</div>; }
